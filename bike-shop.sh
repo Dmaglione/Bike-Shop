@@ -3,7 +3,7 @@
 PSQL="psql -X --username=postgres --dbname=bikes --tuples-only -c"
 
 echo -e "\n~~~~~ Bike Rental Shop ~~~~~\n"
-
+#Main menu function allowing an argument to be used when invoking the script initially.
 MAIN_MENU() {
   if [[ $1 ]]
   then
@@ -13,7 +13,7 @@ MAIN_MENU() {
   echo "How may I help you?" 
   echo -e "\n1. Rent a bike\n2. Return a bike\n3. Exit"
   read MAIN_MENU_SELECTION
-
+#Reading of user input at main menu to determine function to run.
   case $MAIN_MENU_SELECTION in
     1) RENT_MENU ;;
     2) RETURN_MENU ;;
@@ -94,7 +94,7 @@ RENT_MENU() {
     fi
   fi
 }
-
+#Using customer info from one database, update the bike database with relevant return
 RETURN_MENU() {
   # get customer info
   echo -e "\nWhat's your phone number?"
